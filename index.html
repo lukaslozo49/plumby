@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lukas Plumbing</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: #f4f4f4;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      background: #004080;
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: #fff;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 1.5rem;
+      background: none;
+      border: none;
+      color: #fff;
+    }
+
+    /* ✅ Hero Section with Overlay */
+    .hero {
+      position: relative;
+      background: url('https://images.unsplash.com/photo-1583337130417-3346a1d3a291?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+      height: 60vh;
+      min-height: 350px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #fff;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      padding: 1rem;
+    }
+
+    .hero-content h1 {
+      font-size: 3.5rem;
+      font-weight: 700;
+      text-shadow: 3px 3px 6px rgba(0,0,0,0.8);
+      color: #ff4d4d;
+    }
+
+    .hero-content p {
+      font-size: 1.3rem;
+      margin-top: 1rem;
+      background: rgba(0,0,0,0.4);
+      display: inline-block;
+      padding: 0.6rem 1.2rem;
+      border-radius: 5px;
+      color: #fff;
+    }
+
+    .services {
+      padding: 2rem 1rem;
+      background: #fff;
+    }
+
+    .services h2 {
+      text-align: center;
+      color: #004080;
+      margin-bottom: 2rem;
+      font-size: 2rem;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 2rem;
+    }
+
+    .service-card {
+      background: #f9f9f9;
+      padding: 1.5rem;
+      border-radius: 8px;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      transition: transform 0.2s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .service-card img {
+      max-width: 60px;
+      margin-bottom: 1rem;
+    }
+
+    .service-card h3 {
+      color: #c4002b;
+      margin-bottom: 0.5rem;
+    }
+
+    .cta {
+      background: #004080;
+      color: #fff;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+
+    .cta h2 {
+      font-size: 2rem;
+    }
+
+    .cta button {
+      background: #ff4d4d;
+      border: none;
+      color: #fff;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      cursor: pointer;
+      border-radius: 4px;
+      margin-top: 1rem;
+    }
+
+    .cta button:hover {
+      background: #e60000;
+    }
+
+    footer {
+      background: #222;
+      color: #fff;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    footer p {
+      margin-bottom: 0.5rem;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        background: #004080;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 200px;
+        display: none;
+      }
+
+      nav ul.show {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .hero-content h1 {
+        font-size: 2.2rem;
+      }
+
+      .hero-content p {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">Lukas Plumbing</div>
+    <button class="menu-toggle" aria-label="Toggle Menu">☰</button>
+    <nav>
+      <ul>
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ✅ Updated Hero with Overlay and Stand-Out Text -->
+  <section id="hero" class="hero">
+    <div class="hero-content">
+      <h1>Lukas Plumbing</h1>
+      <p>We offer professional, reliable plumbing services across your area.</p>
+    </div>
+  </section>
+
+  <section id="services" class="services">
+    <h2>Our Plumbing Services</h2>
+    <div class="service-grid">
+      <div class="service-card">
+        <img src="https://cdn-icons-png.flaticon.com/512/3063/3063825.png" alt="Emergency Plumbing">
+        <h3>Emergency Plumbing</h3>
+        <p>24/7 response to burst pipes, leaks, and urgent plumbing issues. Fast and efficient service.</p>
+      </div>
+      <div class="service-card">
+        <img src="https://cdn-icons-png.flaticon.com/512/1608/1608190.png" alt="Bathroom Installation">
+        <h3>Bathroom Installation</h3>
+        <p>From toilets to showers, we install and upgrade your bathroom plumbing to modern standards.</p>
+      </div>
+      <div class="service-card">
+        <img src="https://cdn-icons-png.flaticon.com/512/1945/1945611.png" alt="Drain Cleaning">
+        <h3>Drain Cleaning</h3>
+        <p>Clogged sink or slow drainage? We use advanced tools to clear and clean your drains quickly.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="cta">
+    <h2>Need a Plumber? Get a Free Quote Now!</h2>
+    <button>Contact Us</button>
+  </section>
+
+  <footer>
+    <p>📞 (123) 456‑7890 | ✉️ contact@lukasplumbing.com</p>
+    <p>© 2025 Lukas Plumbing</p>
+  </footer>
+
+  <script>
+    const toggle = document.querySelector('.menu-toggle');
+    const navUl = document.querySelector('nav ul');
+    toggle.addEventListener('click', () => {
+      navUl.classList.toggle('show');
+    });
+  </script>
+
+</body>
+</html>
